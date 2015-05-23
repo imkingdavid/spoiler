@@ -1,0 +1,9 @@
+div.spoiler_title input {
+	border-radius: 5px;
+	padding:3px;
+	text-align:center;margin:0px;
+}
+
+div.spoiler_content, div.spoiler_helpers {
+	display:none;
+}
