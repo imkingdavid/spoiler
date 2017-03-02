@@ -72,12 +72,14 @@ class ext extends \phpbb\extension\base
 	 */
 	protected function insert_spoiler_bbcode()
 	{
+		$this->lang = $this->container->get('language');
+		$this->lang->add_lang('spoiler', 'imkingdavid/spoiler');
 		// This code is based somewhat loosely on ./phpBB/includes/acp/acp_bbcodes.php
 		// That code needs to be refactored for easier reuse >:(
 		$bbcode_tag = 'spoiler';
 		$bbcode_match = '[spoiler]{TEXT}[/spoiler]';
 		$bbcode_tpl = '<div class="spoiler_block"><div class="spoiler_title"><input class="button2 btnlite" type="button" value="{L_SHOW}" /></div><div class="spoiler_content">{TEXT}</div></div>';
-		$bbcode_helpline = '[spoiler]hidden text[/spoiler]';
+		$bbcode_helpline = $this->lang->lang('SPOILER_BBCODE_HELPLINE');
 		$data = $this->build_regexp($bbcode_match, $bbcode_tpl);
 
 		$sql_ary = array(

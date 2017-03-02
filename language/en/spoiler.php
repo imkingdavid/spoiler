@@ -31,4 +31,5 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'SHOW'		=> 'Show',
 	'HIDE'		=> 'Hide',
+	'SPOILER_BBCODE_HELPLINE' => '[spoiler]hidden text[/spoiler]',
 ));
